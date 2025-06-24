@@ -30,6 +30,15 @@ const CardsList = () => {
         setCurrentCard(Math.floor(Math.random() * fighterData.length));
     };
 
+    const correctAnswer = (fighterans) =>{
+        const fighterans = parseInt(currFighter.ans);
+        if (fighterData.title === fighterans) {
+            return <p className="text-green-500">Correct!</p>;
+        } else {
+            return <p className="text-red-500">Incorrect!</p>;
+        }
+    }
+
     return (
         <>
         <Header
@@ -41,13 +50,15 @@ const CardsList = () => {
             title={currFighter.title}
             description={currFighter.description}
             imageUrl={currFighter.imageUrl}
+            ans={currFighter.ans}
             Link={currFighter.Link}
         />
         </div>
         <button onClick={prevCard}>left</button>
         <button onClick={nextCard}>right</button>
             <button className="Shuffle" onClick={handleShuffle}>Shuffle Card</button>
-            <Quiz/>
+            <input type="text" placeholder={`How many title defences: ${correctAnswer(fighterans)}?`} />
+            <button className="Submit">Submit</button>
             </>
             
         );

@@ -8,8 +8,8 @@ const Quiz = () => {
 
     return(
         <>
-        <input type="text" placeholder="How many title defences?" />
-        <button className="Submit">Submit</button>
+        {/*lets see if this is how we can return a correct or incorrect feature<CardList/>*/}
+        
         
         </>
     )
